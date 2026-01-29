@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            if (Input.GetButtonDown("GravityMask"))//first mask input
+            if (Input.GetKeyDown("1"))//first mask input
             {
                 ToggleGravity();
                 isGrounded = false;
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = moveDirection;
 
         // 2. JUMPING
-        if (Input.GetButtonDown("PlayerJump") && isGrounded)
+        if (Input.GetKeyDown("w" ) || Input.GetKeyDown("up") && isGrounded)
         {
             float jumpDirection = isGravityFlipped ? -1f : 1f;
             // Vector3.up is shorthand for (0, 1, 0)
