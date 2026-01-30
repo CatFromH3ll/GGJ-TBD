@@ -1,127 +1,95 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float jumpForce = 8.0f;
-    
-    [Header("Masks")]
-    public GameObject gravityMask;
-    private bool gravityMaskActive = false; // Tracks if the mask is "on"
-    public GameObject freezeMask;
-    private bool freezeMaskActive = false;
-    
-    private Rigidbody2D rb;
-    public bool isGrounded;
-    private bool isGravityFlipped = false;
-    private bool isTimeSlowed = false;
-    
-    
 
+    // Variables visible in the Unity Inspector
+    public float speed = 4.0f;       // player speed
+    public float jumpForce = 6.0f;   // player jump force
+    
+    public GameObject GravityMask;
+    private bool isGravityFlipped = false;
+    
+    // Internal variables
+    private Rigidbody2D rb;    // rb stands for rigidbody 
+    private bool isGrounded;   // A "toggle" to know if we are on the floor
+
+    // Awake is called when the script instance is being loaded
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        if (gravityMask != null) gravityMask.SetActive(false); //set the mask off by default
-        if (freezeMask != null) freezeMask.SetActive(false); //set the mask off by the default
+        rb = GetComponent<Rigidbody2D>();// get the component of the rigidbody
+        
+        if (GravityMask != null) //if the mask not used mean the gravity is normal
+        {
+            GravityMask.SetActive(false);
+        }
     }
 
+    // Update is called once every frame (handling Input)
     void Update()
     {
-        // 1. MASK TOGGLE (Press 1 to put the mask on/off)
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (isGrounded)
         {
-            gravityMaskActive = !gravityMaskActive;
-            
-            // IF TURNING ON GRAVITY: Turn off Freeze Mask automatically
-            if (gravityMaskActive)
-            {
-                freezeMaskActive = false;
-                if (freezeMask != null) freezeMask.SetActive(false);
-                ResetTime(); // Always reset time if switching masks
-            }
-            else if (isGravityFlipped)
+            if (Input.GetKeyDown("1"))//first mask input
             {
                 ToggleGravity();
+                isGrounded = false;
             }
-
-            if (gravityMask != null) gravityMask.SetActive(gravityMaskActive);
-        }
-        // 2.MASK TOGGLE (press 2 to put the mask on/off)
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            freezeMaskActive = !freezeMaskActive;
-
-            // IF TURNING ON FREEZE: Turn off Gravity Mask automatically
-            if (freezeMaskActive)
+            else
             {
-                gravityMaskActive = false;
-                if (gravityMask != null) gravityMask.SetActive(false);
+                //Debug.Log("you can use the mask only when you are on the ground");
             }
-
-            if (isGravityFlipped)
-            {
-                ToggleGravity();
-            }
-            
-            else if (isTimeSlowed)
-            {
-                ResetTime(); // Reset time if you take the mask off
-            }
-
-            if (freezeMask != null) freezeMask.SetActive(freezeMaskActive);
         }
+ 
+        float xInput = Input.GetAxis("Horizontal");
+        Vector3 moveDirection = new Vector3(xInput * speed, rb.linearVelocity.y, 0f);
+        rb.linearVelocity = moveDirection;
 
-        // 2. GRAVITY ABILITY (Press G only if mask is on and we are grounded)
-        if (gravityMaskActive && isGrounded && Input.GetKeyDown(KeyCode.G))
-        {
-            ToggleGravity();
-        }
-
-        if (freezeMaskActive && Input.GetKeyDown(KeyCode.F))
-        {
-            ToggleSlowMotion();
-        }
-
-        // 3. MOVEMENT
-        float xInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(xInput * speed, rb.linearVelocity.y);
-
-        // 4. JUMPING (Added parentheses to fix the logic)
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
+        // 2. JUMPING
+        if ((Input.GetKeyDown("w") || Input.GetKeyDown("up")) && isGrounded)
         {
             float jumpDirection = isGravityFlipped ? -1f : 1f;
-            rb.AddForce(Vector2.up * jumpForce * jumpDirection, ForceMode2D.Impulse);
+            // Vector3.up is shorthand for (0, 1, 0)
+            // ForceMode2D.Impulse makes the force happen instantly (perfect for jumps)
+            rb.AddForce(Vector3.up * jumpForce * jumpDirection, ForceMode2D.Impulse);
+            // Set grounded to false so we can't jump again while in mid-air
             isGrounded = false;
         }
     }
-    
-    void ToggleSlowMotion()
-    {
-        isTimeSlowed = !isTimeSlowed;
-        Traps.GlobalTimeFactor = isTimeSlowed ? 0.5f : 1.0f;
-    }
 
-    void ResetTime()
-    {
-        isTimeSlowed = false;
-        Traps.GlobalTimeFactor = 1.0f;
-    }
-    
     void ToggleGravity()
     {
         isGravityFlipped = !isGravityFlipped;
-        rb.gravityScale *= -1; // Flip gravity
-
-        // Flip the player visual
-        float rotationZ = isGravityFlipped ? 180f : 0f;
-        transform.eulerAngles = new Vector3(0, 0, rotationZ);
-        
-        isGrounded = false; // Player is now "falling" to the new floor
+        rb.gravityScale = rb.gravityScale * -1;
+        if (isGravityFlipped)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 180f);
+            if (GravityMask != null)
+            {
+                GravityMask.SetActive(true);
+            }
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0f);
+            if (GravityMask != null)
+            {
+                GravityMask.SetActive(false);
+            }
+        }
     }
-
+    
+    // This function runs automatically when the player's collider hits another collider
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+        
+        // Fail-safe: Also check the main object (for normal floors)
+        else if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }

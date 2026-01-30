@@ -5,17 +5,21 @@ public class Traps : MonoBehaviour
 {
     public enum TrapType { Static, SpinningSaw, FallingBlock, Spear, Axe }
     public TrapType trapType;
-
-    [Header("Settings")]
-    public float rotationSpeed = 300f;
-    public float detectionDistance = 20f; 
-    public float throwSpeed = 30f;
-    public static float GlobalTimeFactor = 1.0f; 
     public LayerMask playerLayer;
 
+    public bool isDangerousWhenFalling = true;
+    private bool hasTriggered = false;
+    private bool isStuck = false; 
+    public bool throwToLeft = false;
+    public bool artFacesLeft = false;
+
+    public float rotationSpeed = -300f;
+    public float detectionDistance = 20f;
+    public float throwSpeed = 30f;
+    public static float GlobalTimeFactor = 1.0f;
+
     private Rigidbody2D rb;
-    private bool hasTriggered = false; // Replaced "hasFallen" for clarity
-    private bool isStuck = false;      // New: tracks if axe hit the wall
+    private SpriteRenderer sr;
 
     void Start()
     {
@@ -24,28 +28,42 @@ public class Traps : MonoBehaviour
             rb = GetComponent<Rigidbody2D>();
             if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic; // Freeze initially
         }
+        
+        // Ensure Falling Block is treated as Ground so you can jump on it before AND after it falls
+        if (trapType == TrapType.FallingBlock)
+        {
+            gameObject.tag = "Ground";
+        }
+
+        if (trapType == TrapType.Axe)
+        {
+            sr = GetComponent<SpriteRenderer>();
+            bool shouldFlip = throwToLeft;
+            if (artFacesLeft) shouldFlip = !shouldFlip;
+            if (sr != null) sr.flipX = shouldFlip;
+        }
     }
 
     void Update()
     {
-        if (trapType == TrapType.SpinningSaw) // SPINNING SAW (Always spins)
+        if (trapType == TrapType.SpinningSaw)
         {
             transform.Rotate(0, 0, rotationSpeed * GlobalTimeFactor * Time.deltaTime);
         }
-        else if (trapType == TrapType.Axe) // THROWING AXE (Spins only when flying)
+        else if (trapType == TrapType.Axe)
         {
-            if (hasTriggered && !isStuck) // If it has been thrown BUT hasn't hit the wall yet -> SPIN
+            if (hasTriggered && !isStuck)
             {
-                transform.Rotate(0, 0, rotationSpeed * GlobalTimeFactor * Time.deltaTime);
+                float spinDirection = throwToLeft ? -1f : 1f;
+                transform.Rotate(0, 0, rotationSpeed * spinDirection * GlobalTimeFactor * Time.deltaTime);
             }
-            // If it hasn't been thrown yet -> LOOK FOR PLAYER
             else if (!hasTriggered)
             {
-                // transform.right automatically handles rotation (Left or Right)
-                DetectPlayerInDirection(transform.right);
+                Vector2 dir = throwToLeft ? Vector2.left : Vector2.right;
+                DetectPlayerInDirection(dir);
             }
         }
-        else if (!hasTriggered) // OTHER TRAPS (Detection)
+        else if (!hasTriggered) 
         {
             if (trapType == TrapType.FallingBlock) DetectPlayerInDirection(Vector2.down);
             else if (trapType == TrapType.Spear) DetectPlayerInDirection(Vector2.up);
@@ -55,7 +73,6 @@ public class Traps : MonoBehaviour
     void DetectPlayerInDirection(Vector2 direction)
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionDistance, playerLayer);
-        Debug.DrawRay(transform.position, direction * detectionDistance, Color.red);
         
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
@@ -74,85 +91,85 @@ public class Traps : MonoBehaviour
             else if (trapType == TrapType.Spear) rb.gravityScale = -2f;
             else if (trapType == TrapType.Axe)
             {
-                rb.gravityScale = 0f; // Fly straight
-                rb.linearVelocity = dir * throwSpeed; // Fly in the direction we looked
+                rb.gravityScale = 0f; 
+                rb.linearVelocity = dir * throwSpeed;
             }
         }
     }
-
-    // --- COLLISION LOGIC ---
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 1. AXE LOGIC
-        if (trapType == TrapType.Axe)
+        if (trapType == TrapType.Axe) // 1. AXE LOGIC =========================================================================
         {
-            // If it hits the player...
             if (collision.gameObject.CompareTag("Player"))
             {
-                // If it is flying (dangerous) -> Restart
-                if (!isStuck) RestartLevel();
-                // If it is stuck (platform) -> Do nothing (safe to walk on)
+                if (!isStuck) RestartLevel(); 
+                else
+                {
+                    if (collision.otherCollider.CompareTag("Ground")) return; 
+                    RestartLevel();
+                }
             }
-            // If it hits the wall/ground -> Stick
             else if (collision.gameObject.CompareTag("Ground"))
             {
                 FreezeTrap();
             }
         }
+        else if (trapType == TrapType.FallingBlock) // 2. FALLING BLOCK LOGIC ================================================
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (isStuck) return; // If the block is stuck (landed), it's just a normal wall/floor, We return immediately so no damage logic runs.
 
-        // 2. FALLING BLOCK LOGIC
-        else if (trapType == TrapType.FallingBlock)
+                foreach (ContactPoint2D contact in collision.contacts)
+                {
+                    if (contact.normal.y < -0.5f)
+                    {
+                        return;
+                    }
+                    if (hasTriggered)
+                    {
+                        RestartLevel();
+                    }
+                }
+            }
+            else if (collision.gameObject.CompareTag("Ground")) // If it hits the floor, it stops and becomes safe terrain
+            {
+                FreezeTrap();
+            }
+        }
+        else if (trapType == TrapType.Spear) // 3. SPEAR LOGIC ==================================================================
         {
             if (collision.gameObject.CompareTag("Player"))
             {
                 foreach (ContactPoint2D contact in collision.contacts)
                 {
-                    if (contact.normal.y > 0.5f) RestartLevel(); // Crushed
+                    if (contact.normal.y < -0.5f) RestartLevel();
                 }
             }
             else if (collision.gameObject.CompareTag("Ground")) FreezeTrap();
         }
-
-        // 3. SPEAR LOGIC
-        else if (trapType == TrapType.Spear)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                foreach (ContactPoint2D contact in collision.contacts)
-                {
-                    if (contact.normal.y < -0.5f) RestartLevel(); // Impaled
-                }
-            }
-            else if (collision.gameObject.CompareTag("Ground")) FreezeTrap();
-        }
-
-        // 4. GENERIC TRAPS
-        else 
+        else // 4. STATIC TRAPS (SPIKES) ========================================================================================
         {
             if (collision.gameObject.CompareTag("Player")) RestartLevel();
         }
     }
-
     void FreezeTrap()
     {
         isStuck = true;
         if (rb != null)
         {
-            rb.bodyType = RigidbodyType2D.Static; // Stop moving
-            rb.linearVelocity = Vector2.zero;     // Stop physics velocity
+            rb.bodyType = RigidbodyType2D.Static;
+            rb.linearVelocity = Vector2.zero;
         }
-        gameObject.tag = "Ground"; // Become walkable
-        
-        // Optional: Re-align rotation to look nice on the wall?
-        // transform.rotation = Quaternion.Euler(0, 0, 0); 
+        if (trapType != TrapType.Axe) // Ensure it is tagged Ground so PlayerMovement sees it as jumpable
+        {
+            gameObject.tag = "Ground";
+        }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) RestartLevel();
     }
-
     void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
