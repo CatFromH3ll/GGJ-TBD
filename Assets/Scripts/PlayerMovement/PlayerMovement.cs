@@ -31,19 +31,44 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             gravityMaskActive = !gravityMaskActive;
+            
+            // IF TURNING ON GRAVITY: Turn off Freeze Mask automatically
+            if (gravityMaskActive)
+            {
+                freezeMaskActive = false;
+                if (freezeMask != null) freezeMask.SetActive(false);
+                ResetTime(); // Always reset time if switching masks
+            }
+            else if (isGravityFlipped)
+            {
+                ToggleGravity();
+            }
+
             if (gravityMask != null) gravityMask.SetActive(gravityMaskActive);
         }
         // 2.MASK TOGGLE (press 2 to put the mask on/off)
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             freezeMaskActive = !freezeMaskActive;
-            if (freezeMask != null) freezeMask.SetActive(freezeMaskActive);
 
-            // Safety: If mask is turned off, reset time to normal
-            if (!freezeMaskActive && isTimeSlowed)
+            // IF TURNING ON FREEZE: Turn off Gravity Mask automatically
+            if (freezeMaskActive)
             {
-                ResetTime();
+                gravityMaskActive = false;
+                if (gravityMask != null) gravityMask.SetActive(false);
             }
+
+            if (isGravityFlipped)
+            {
+                ToggleGravity();
+            }
+            
+            else if (isTimeSlowed)
+            {
+                ResetTime(); // Reset time if you take the mask off
+            }
+
+            if (freezeMask != null) freezeMask.SetActive(freezeMaskActive);
         }
 
         // 2. GRAVITY ABILITY (Press G only if mask is on and we are grounded)
@@ -52,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             ToggleGravity();
         }
 
-        if (freezeMaskActive && isTimeSlowed && Input.GetKeyDown(KeyCode.F))
+        if (freezeMaskActive && Input.GetKeyDown(KeyCode.F))
         {
             ToggleSlowMotion();
         }
@@ -79,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     void ResetTime()
     {
         isTimeSlowed = false;
-        Traps.GlobalTimerFactor = 1.0f;
+        Traps.GlobalTimeFactor = 1.0f;
     }
     
     void ToggleGravity()
