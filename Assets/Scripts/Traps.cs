@@ -3,128 +3,156 @@ using UnityEngine.SceneManagement;
 
 public class Traps : MonoBehaviour
 {
-    // Dropdown to select trap type in Inspector
-    public float rotationSpeed = 200f;
-    public float detectionDistance = 10f; 
-    public enum TrapType { Static, SpinningSaw, FallingBlock, Spear }
+    public enum TrapType { Static, SpinningSaw, FallingBlock, Spear, Axe }
     public TrapType trapType;
+
+    [Header("Settings")]
+    public float rotationSpeed = 300f;
+    public float detectionDistance = 20f; 
+    public float throwSpeed = 30f;
+    public static float GlobalTimeFactor = 1.0f; 
     public LayerMask playerLayer;
-    
-    public GameObject TrapGround;
+
     private Rigidbody2D rb;
-    
-    private bool hasFallen = false;
+    private bool hasTriggered = false; // Replaced "hasFallen" for clarity
+    private bool isStuck = false;      // New: tracks if axe hit the wall
+
     void Start()
     {
-        if (trapType == TrapType.FallingBlock || trapType == TrapType.Spear)// If it is a falling block OR SPEAR, get the Rigidbody and freeze it initially
+        if (trapType == TrapType.FallingBlock || trapType == TrapType.Spear || trapType == TrapType.Axe)
         {
             rb = GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.bodyType = RigidbodyType2D.Kinematic; // Floating in air
-            }
-            else
-            {
-                Debug.LogError("Falling Block needs a Rigidbody2D!");
-            }
+            if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic; // Freeze initially
         }
     }
+
     void Update()
     {
-        if (trapType == TrapType.SpinningSaw) // Handle Spinning Saw Logic
+        if (trapType == TrapType.SpinningSaw) // SPINNING SAW (Always spins)
         {
-            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+            transform.Rotate(0, 0, rotationSpeed * GlobalTimeFactor * Time.deltaTime);
         }
-        if (trapType == TrapType.FallingBlock && !hasFallen) // Handle Falling Block Logic
+        else if (trapType == TrapType.Axe) // THROWING AXE (Spins only when flying)
         {
-            DetectPlayerBelow();
+            if (hasTriggered && !isStuck) // If it has been thrown BUT hasn't hit the wall yet -> SPIN
+            {
+                transform.Rotate(0, 0, rotationSpeed * GlobalTimeFactor * Time.deltaTime);
+            }
+            // If it hasn't been thrown yet -> LOOK FOR PLAYER
+            else if (!hasTriggered)
+            {
+                // transform.right automatically handles rotation (Left or Right)
+                DetectPlayerInDirection(transform.right);
+            }
         }
-        if (trapType == TrapType.Spear && !hasFallen) // Handle Spear Logic
+        else if (!hasTriggered) // OTHER TRAPS (Detection)
         {
-            DetectPlayerAbove();
+            if (trapType == TrapType.FallingBlock) DetectPlayerInDirection(Vector2.down);
+            else if (trapType == TrapType.Spear) DetectPlayerInDirection(Vector2.up);
         }
     }
-    void DetectPlayerBelow()
+
+    void DetectPlayerInDirection(Vector2 direction)
     {
-        // Cast a ray straight down to look for the player
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, detectionDistance, playerLayer);
-
-        // Draw a line in the Scene view so you can see the detection range (Debug only)
-        Debug.DrawRay(transform.position, Vector2.down * detectionDistance, Color.red);
-
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionDistance, playerLayer);
+        Debug.DrawRay(transform.position, direction * detectionDistance, Color.red);
+        
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
-            DropBlock();
+            ActivateTrap(direction);
         }
     }
 
-    void DetectPlayerAbove()
+    void ActivateTrap(Vector2 dir)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, detectionDistance, playerLayer);
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
+        hasTriggered = true;
+        if (rb != null)
         {
-            ShootSpear();
+            rb.bodyType = RigidbodyType2D.Dynamic;
+
+            if (trapType == TrapType.FallingBlock) rb.gravityScale = 2f;
+            else if (trapType == TrapType.Spear) rb.gravityScale = -2f;
+            else if (trapType == TrapType.Axe)
+            {
+                rb.gravityScale = 0f; // Fly straight
+                rb.linearVelocity = dir * throwSpeed; // Fly in the direction we looked
+            }
         }
     }
 
-    void DropBlock()
+    // --- COLLISION LOGIC ---
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        hasFallen = true;
-        if (rb != null)
+        // 1. AXE LOGIC
+        if (trapType == TrapType.Axe)
         {
-            rb.bodyType = RigidbodyType2D.Dynamic; // Enable gravity
-            rb.gravityScale = 2f; // Make it fall fast (optional)
+            // If it hits the player...
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                // If it is flying (dangerous) -> Restart
+                if (!isStuck) RestartLevel();
+                // If it is stuck (platform) -> Do nothing (safe to walk on)
+            }
+            // If it hits the wall/ground -> Stick
+            else if (collision.gameObject.CompareTag("Ground"))
+            {
+                FreezeTrap();
+            }
+        }
+
+        // 2. FALLING BLOCK LOGIC
+        else if (trapType == TrapType.FallingBlock)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                foreach (ContactPoint2D contact in collision.contacts)
+                {
+                    if (contact.normal.y > 0.5f) RestartLevel(); // Crushed
+                }
+            }
+            else if (collision.gameObject.CompareTag("Ground")) FreezeTrap();
+        }
+
+        // 3. SPEAR LOGIC
+        else if (trapType == TrapType.Spear)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                foreach (ContactPoint2D contact in collision.contacts)
+                {
+                    if (contact.normal.y < -0.5f) RestartLevel(); // Impaled
+                }
+            }
+            else if (collision.gameObject.CompareTag("Ground")) FreezeTrap();
+        }
+
+        // 4. GENERIC TRAPS
+        else 
+        {
+            if (collision.gameObject.CompareTag("Player")) RestartLevel();
         }
     }
-    void ShootSpear()
+
+    void FreezeTrap()
     {
-        hasFallen = true;
+        isStuck = true;
         if (rb != null)
         {
-            rb.bodyType = RigidbodyType2D.Dynamic; // Enable gravity
-            rb.gravityScale = -2f;
+            rb.bodyType = RigidbodyType2D.Static; // Stop moving
+            rb.linearVelocity = Vector2.zero;     // Stop physics velocity
         }
+        gameObject.tag = "Ground"; // Become walkable
+        
+        // Optional: Re-align rotation to look nice on the wall?
+        // transform.rotation = Quaternion.Euler(0, 0, 0); 
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) RestartLevel();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (trapType == TrapType.FallingBlock) // --- FALLING BLOCK LOGIC ---
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                foreach (ContactPoint2D contact in collision.contacts)
-                {
-                    if (contact.normal.y > 0.5f) RestartLevel(); // Normal points UP = Player is BELOW the block (Crushed)
-                }
-            }
-            else if (collision.gameObject.CompareTag("Ground"))
-            {
-                rb.bodyType = RigidbodyType2D.Static; // Freeze on floor
-                TrapGround.SetActive(true);
-            }
-        }
-        else if (trapType == TrapType.Spear) // --- SPEAR LOGIC (New) ---
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                foreach (ContactPoint2D contact in collision.contacts)
-                {
-                    if (contact.normal.y < -0.5f) RestartLevel(); // Normal points DOWN = Player is ABOVE the spear (Impaled)
-                }
-            }
-            else if (collision.gameObject.CompareTag("Ground")) // Stick to the Ceiling
-            {
-                rb.bodyType = RigidbodyType2D.Static; // Freeze on ceiling
-            }
-        }
-        else // --- OTHER TRAPS (Spikes/Saws) ---
-        {
-            if (collision.gameObject.CompareTag("Player")) RestartLevel(); // Instantly kill on any touch
-        }
-    }
+
     void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
