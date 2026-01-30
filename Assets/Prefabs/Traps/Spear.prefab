@@ -102,12 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e72e27bebbb91645b3adc5c3e194e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
-  detectionDistance: 10
   trapType: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  isDangerousWhenFalling: 1
+  throwToLeft: 0
+  artFacesLeft: 0
+  rotationSpeed: 200
+  detectionDistance: 10
+  throwSpeed: 30
 --- !u!50 &1902377884019260829
 Rigidbody2D:
   serializedVersion: 5
