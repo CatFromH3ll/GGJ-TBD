@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51556be-4cab-449e-8051-a0fa119241c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ-TBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ-TBD/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c51556be-4cab-449e-8051-a0fa119241c5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,20 +17,22 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/Traps.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="38x3Tmz8GaRi97GN3WFlSzNCcAd" />
+  <component name="ProjectId" id="38x5wOm2q3jGT76vbpHkiAbHRma" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Ariel-Hirsch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Ariel-Eskin2&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -44,9 +44,9 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.60f1\Editor\Unity.exe" />
-      <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\unity projects\GGJ-TBD&quot; -debugCodeOptimization" />
-      <option name="WORKING_DIRECTORY" value="C:\unity projects\GGJ-TBD" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.63f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\ARIEL\Documents\GitHub\TiltanUnityLecture\GGJ-TBD -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\ARIEL\Documents\GitHub\TiltanUnityLecture\GGJ-TBD" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
@@ -54,9 +54,9 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.60f1\Editor\Unity.exe" />
-      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\unity projects\GGJ-TBD&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
-      <option name="WORKING_DIRECTORY" value="C:\unity projects\GGJ-TBD" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.63f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\ARIEL\Documents\GitHub\TiltanUnityLecture\GGJ-TBD -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\ARIEL\Documents\GitHub\TiltanUnityLecture\GGJ-TBD" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
@@ -84,11 +84,13 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c51556be-4cab-449e-8051-a0fa119241c5" name="Changes" comment="" />
-      <created>1769727409386</created>
+      <created>1769728620758</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1769727409386</updated>
-      <workItem from="1769727412417" duration="976000" />
+      <updated>1769728620758</updated>
+      <workItem from="1769728623917" duration="663000" />
+      <workItem from="1769729307388" duration="6408000" />
+      <workItem from="1769764407746" duration="6896000" />
     </task>
     <servers />
   </component>
