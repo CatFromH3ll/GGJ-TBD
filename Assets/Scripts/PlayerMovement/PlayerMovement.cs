@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
-    public float jumpForce = 8.0f;
+    public float jumpForce = 6.0f;
+    public float crouchScaleY = 0.5f;
+    private Vector3 originalScale;  
     
     [Header("Inventory (Auto-filled by Pickups)")]
     public bool hasGravityMask = false;
@@ -16,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private bool freezeMaskActive = false;
     
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private bool isGrounded;
     private bool isGravityFlipped = false;
     private bool isTimeSlowed = false;
@@ -23,9 +26,12 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         // Ensure masks start hidden
         if (gravityMask != null) gravityMask.SetActive(false);
         if (freezeMask != null) freezeMask.SetActive(false);
+        // Record the starting size of the player
+        originalScale = transform.localScale;
     }
 
     void Update()
@@ -63,12 +69,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // --- ABILITIES ---
-        if (gravityMaskActive && isGrounded && Input.GetKeyDown(KeyCode.G))
+        if (gravityMaskActive && isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             ToggleGravity();
         }
 
-        if (freezeMaskActive && Input.GetKeyDown(KeyCode.F))
+        if (freezeMaskActive && Input.GetKeyDown(KeyCode.Space))
         {
             ToggleSlowMotion();
         }
@@ -82,6 +88,15 @@ public class PlayerMovement : MonoBehaviour
             float jumpDirection = isGravityFlipped ? -1f : 1f;
             rb.AddForce(Vector2.up * jumpForce * jumpDirection, ForceMode2D.Impulse);
             isGrounded = false;
+        }
+        
+        if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded)
+        {
+            transform.localScale = new Vector3(originalScale.x, crouchScaleY, originalScale.z);
+        }
+        else
+        {
+            transform.localScale = originalScale;
         }
     }
     
@@ -102,7 +117,17 @@ public class PlayerMovement : MonoBehaviour
         isGravityFlipped = !isGravityFlipped;
         rb.gravityScale *= -1; 
         transform.eulerAngles = new Vector3(0, 0, isGravityFlipped ? 180f : 0f);
-        isGrounded = false; 
+        isGrounded = false;
+        if (isGravityFlipped)
+        {
+            sr.flipX = true;
+            
+        }
+        else
+        {
+            sr.flipX = false;
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
