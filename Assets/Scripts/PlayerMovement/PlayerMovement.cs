@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = moveDirection;
 
         // 2. JUMPING
-        if (Input.GetKeyDown("w" ) || Input.GetKeyDown("up") && isGrounded)
+        if ((Input.GetKeyDown("w") || Input.GetKeyDown("up")) && isGrounded)
         {
             float jumpDirection = isGravityFlipped ? -1f : 1f;
             // Vector3.up is shorthand for (0, 1, 0)
