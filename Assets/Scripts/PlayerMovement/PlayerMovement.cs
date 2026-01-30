@@ -83,10 +83,14 @@ public class PlayerMovement : MonoBehaviour
     // This function runs automatically when the player's collider hits another collider
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the object we bumped into has the tag "Ground"
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.collider.CompareTag("Ground"))
         {
-            // If it does, we are back on the floor and can jump again
+            isGrounded = true;
+        }
+        
+        // Fail-safe: Also check the main object (for normal floors)
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
             isGrounded = true;
         }
     }
