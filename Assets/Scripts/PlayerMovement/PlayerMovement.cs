@@ -5,9 +5,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5.0f;
     public float jumpForce = 8.0f;
     
-    [Header("Masks")]
+    [Header("Inventory (Auto-filled by Pickups)")]
+    public bool hasGravityMask = false;
+    public bool hasFreezeMask = false;
+
+    [Header("Mask Visuals (Drag child objects here)")]
     public GameObject gravityMask;
-    private bool gravityMaskActive = false; // Tracks if the mask is "on"
+    private bool gravityMaskActive = false;
     public GameObject freezeMask;
     private bool freezeMaskActive = false;
     
@@ -15,63 +19,50 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool isGravityFlipped = false;
     private bool isTimeSlowed = false;
-    
-    
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (gravityMask != null) gravityMask.SetActive(false); //set the mask off by default
-        if (freezeMask != null) freezeMask.SetActive(false); //set the mask off by the default
+        // Ensure masks start hidden
+        if (gravityMask != null) gravityMask.SetActive(false);
+        if (freezeMask != null) freezeMask.SetActive(false);
     }
 
     void Update()
     {
-        // 1. MASK TOGGLE (Press 1 to put the mask on/off)
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        // 1. GRAVITY MASK TOGGLE (Requires Pickup)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && hasGravityMask)
         {
             gravityMaskActive = !gravityMaskActive;
             
-            // IF TURNING ON GRAVITY: Turn off Freeze Mask automatically
             if (gravityMaskActive)
             {
                 freezeMaskActive = false;
                 if (freezeMask != null) freezeMask.SetActive(false);
-                ResetTime(); // Always reset time if switching masks
+                ResetTime(); 
             }
-            else if (isGravityFlipped)
-            {
-                ToggleGravity();
-            }
+            else if (isGravityFlipped) ToggleGravity();
 
             if (gravityMask != null) gravityMask.SetActive(gravityMaskActive);
         }
-        // 2.MASK TOGGLE (press 2 to put the mask on/off)
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+
+        // 2. FREEZE MASK TOGGLE (Requires Pickup)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && hasFreezeMask)
         {
             freezeMaskActive = !freezeMaskActive;
 
-            // IF TURNING ON FREEZE: Turn off Gravity Mask automatically
             if (freezeMaskActive)
             {
                 gravityMaskActive = false;
                 if (gravityMask != null) gravityMask.SetActive(false);
+                if (isGravityFlipped) ToggleGravity();
             }
-
-            if (isGravityFlipped)
-            {
-                ToggleGravity();
-            }
-            
-            else if (isTimeSlowed)
-            {
-                ResetTime(); // Reset time if you take the mask off
-            }
+            else if (isTimeSlowed) ResetTime();
 
             if (freezeMask != null) freezeMask.SetActive(freezeMaskActive);
         }
 
-        // 2. GRAVITY ABILITY (Press G only if mask is on and we are grounded)
+        // --- ABILITIES ---
         if (gravityMaskActive && isGrounded && Input.GetKeyDown(KeyCode.G))
         {
             ToggleGravity();
@@ -82,11 +73,10 @@ public class PlayerMovement : MonoBehaviour
             ToggleSlowMotion();
         }
 
-        // 3. MOVEMENT
+        // --- MOVEMENT ---
         float xInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(xInput * speed, rb.linearVelocity.y);
 
-        // 4. JUMPING (Added parentheses to fix the logic)
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             float jumpDirection = isGravityFlipped ? -1f : 1f;
@@ -110,20 +100,13 @@ public class PlayerMovement : MonoBehaviour
     void ToggleGravity()
     {
         isGravityFlipped = !isGravityFlipped;
-        rb.gravityScale *= -1; // Flip gravity
-
-        // Flip the player visual
-        float rotationZ = isGravityFlipped ? 180f : 0f;
-        transform.eulerAngles = new Vector3(0, 0, rotationZ);
-        
-        isGrounded = false; // Player is now "falling" to the new floor
+        rb.gravityScale *= -1; 
+        transform.eulerAngles = new Vector3(0, 0, isGravityFlipped ? 180f : 0f);
+        isGrounded = false; 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
+        if (collision.gameObject.CompareTag("Ground")) isGrounded = true;
     }
 }
