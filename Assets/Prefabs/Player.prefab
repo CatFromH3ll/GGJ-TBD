@@ -567,5 +567,5 @@ MonoBehaviour:
   crouchScaleY: 0.5
   hasGravityMask: 0
   hasFreezeMask: 0
-  gravityMask: {fileID: 0}
-  freezeMask: {fileID: 0}
+  gravityMask: {fileID: 5742425712583563894}
+  freezeMask: {fileID: 3699863154769961917}
