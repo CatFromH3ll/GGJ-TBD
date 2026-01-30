@@ -14,11 +14,5 @@ public class OneWayPlatform : MonoBehaviour
         } else {
             effector.rotationalOffset = 0f;
         }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            effector.rotationalOffset = 180f;
-        }
-        
     }
 }

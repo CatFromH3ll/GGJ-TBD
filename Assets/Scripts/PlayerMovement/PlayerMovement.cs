@@ -18,33 +18,29 @@ public class PlayerMovement : MonoBehaviour
     private bool freezeMaskActive = false;
     
     private Rigidbody2D rb;
-    public bool isGrounded;
+    private SpriteRenderer sr;
+    private bool isGrounded;
     private bool isGravityFlipped = false;
     private bool isTimeSlowed = false;
-
-    public SpriteRenderer sr;
-
-    // --- NEW: SLOPE DETECTION VARIABLES ---
-    public LayerMask groundLayer; // Set this to "Ground" in the Inspector
-    public float rayLength = 0.5f;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        // Ensure masks start hidden
         if (gravityMask != null) gravityMask.SetActive(false);
         if (freezeMask != null) freezeMask.SetActive(false);
+        // Record the starting size of the player
         originalScale = transform.localScale;
-
-        // Keep rotation frozen from physics, but we will control it via code
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void Update()
     {
-        // 1. GRAVITY MASK TOGGLE
+        // 1. GRAVITY MASK TOGGLE (Requires Pickup)
         if (Input.GetKeyDown(KeyCode.Alpha1) && hasGravityMask)
         {
             gravityMaskActive = !gravityMaskActive;
+            
             if (gravityMaskActive)
             {
                 freezeMaskActive = false;
@@ -52,13 +48,15 @@ public class PlayerMovement : MonoBehaviour
                 ResetTime(); 
             }
             else if (isGravityFlipped) ToggleGravity();
+
             if (gravityMask != null) gravityMask.SetActive(gravityMaskActive);
         }
 
-        // 2. FREEZE MASK TOGGLE
+        // 2. FREEZE MASK TOGGLE (Requires Pickup)
         if (Input.GetKeyDown(KeyCode.Alpha2) && hasFreezeMask)
         {
             freezeMaskActive = !freezeMaskActive;
+
             if (freezeMaskActive)
             {
                 gravityMaskActive = false;
@@ -66,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
                 if (isGravityFlipped) ToggleGravity();
             }
             else if (isTimeSlowed) ResetTime();
+
             if (freezeMask != null) freezeMask.SetActive(freezeMaskActive);
         }
 
@@ -74,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ToggleGravity();
         }
+
         if (freezeMaskActive && Input.GetKeyDown(KeyCode.Space))
         {
             ToggleSlowMotion();
@@ -83,33 +83,11 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(xInput * speed, rb.linearVelocity.y);
 
-        // --- NEW: FACE LOOK LEFT/RIGHT ---
-        if (xInput > 0) sr.flipX = false;
-        else if (xInput < 0) sr.flipX = true;
-
-        // --- NEW: SLOPE ALIGNMENT LOGIC ---
-        // Shoot a ray downwards (or upwards if gravity is flipped)
-        Vector2 rayDir = isGravityFlipped ? transform.up : -transform.up;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, groundLayer);
-
-        if (hit.collider != null)
-        {
-            // Calculate the angle of the ground
-            float angle = Vector2.SignedAngle(isGravityFlipped ? Vector2.down : Vector2.up, hit.normal);
-            // Apply the rotation so the player "leans" into the slope
-            transform.eulerAngles = new Vector3(0, 0, angle);
-        }
-        else
-        {
-            // Reset to flat if in the air
-            transform.eulerAngles = new Vector3(0, 0, isGravityFlipped ? 180f : 0f);
-        }
-
-        // --- JUMP & CROUCH ---
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             float jumpDirection = isGravityFlipped ? -1f : 1f;
             rb.AddForce(Vector2.up * jumpForce * jumpDirection, ForceMode2D.Impulse);
+            isGrounded = false;
         }
         
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded)
@@ -121,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = originalScale;
         }
     }
-
+    
     void ToggleSlowMotion()
     {
         isTimeSlowed = !isTimeSlowed;
@@ -138,6 +116,27 @@ public class PlayerMovement : MonoBehaviour
     {
         isGravityFlipped = !isGravityFlipped;
         rb.gravityScale *= -1; 
+        transform.eulerAngles = new Vector3(0, 0, isGravityFlipped ? 180f : 0f);
+        isGrounded = false;
+        if (isGravityFlipped)
+        {
+            sr.flipX = true;
+            
+        }
+        else
+        {
+            sr.flipX = false;
+        }
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground")) isGrounded = true;
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
     }
     
 }
