@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private bool freezeMaskActive = false;
     
     private Rigidbody2D rb;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool isGravityFlipped = false;
     private bool isTimeSlowed = false;
     
