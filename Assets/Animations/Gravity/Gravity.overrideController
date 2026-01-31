@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gravity
+  m_Controller: {fileID: 9100000, guid: cb815797202df4042af5b328defc76e4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 0cdd2c79cfe43b142ba45cae20f1baad, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 39cdd64422d51d84888e5bb73acaad1d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 23fc2a799ebfe5f4596a27f0a718b397, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7dc71cecda981614cae3d43c3edcff39, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dbbfbdf5cb3df7b46874913d1a626281, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: db7d7141e281bdb408a70997b632511a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a18f9cc2bb509a04487d6578a1c5d3db, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 93b02bf345340f744b759a5b58d8e70c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 441cb06f5dc0c2a4baf530d304ac6917, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fb44346a072076b4ab2e45c17f0ce5c8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6cd7345e49170664fa23731b78a12d15, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d30f9def3f742ae4ba3cb7f0535ff6cd, type: 2}
