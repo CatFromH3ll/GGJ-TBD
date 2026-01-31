@@ -259,9 +259,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3103
-        y: 6923
+        y: 6940
         width: 1061
-        height: 834
+        height: 817
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,9 +325,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 191
-        y: 5479
+        y: 5525
         width: 1077
-        height: 868
+        height: 822
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,9 +347,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1607
-        y: 5477
+        y: 5523
         width: 1063
-        height: 822
+        height: 776
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,10 +368,10 @@ TextureImporter:
       name: fixed sprites_8
       rect:
         serializedVersion: 2
-        x: 181
-        y: 4061
+        x: 182
+        y: 4104
         width: 998
-        height: 805
+        height: 762
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,10 +434,10 @@ TextureImporter:
       name: fixed sprites_11
       rect:
         serializedVersion: 2
-        x: 3230
-        y: 4058
+        x: 3233
+        y: 4099
         width: 1034
-        height: 804
+        height: 756
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,9 +479,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 88
-        y: 2638
+        y: 2685
         width: 1037
-        height: 805
+        height: 758
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,9 +523,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1459
-        y: 2640
+        y: 2682
         width: 1077
-        height: 989
+        height: 948
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +566,10 @@ TextureImporter:
       name: fixed sprites_17
       rect:
         serializedVersion: 2
-        x: 4281
-        y: 2670
+        x: 4285
+        y: 2679
         width: 1061
-        height: 834
+        height: 829
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,8 +588,8 @@ TextureImporter:
       name: fixed sprites_18
       rect:
         serializedVersion: 2
-        x: 5803
-        y: 2552
+        x: 5810
+        y: 2557
         width: 927
         height: 936
       alignment: 7
@@ -611,9 +611,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 190
-        y: 1183
+        y: 1266
         width: 1077
-        height: 909
+        height: 826
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -633,9 +633,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1766
-        y: 1225
+        y: 1268
         width: 1225
-        height: 868
+        height: 825
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,9 +655,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3655
-        y: 1225
+        y: 1268
         width: 1236
-        height: 868
+        height: 828
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

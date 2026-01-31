@@ -178,6 +178,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -186,9 +199,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 263
-        y: 6894
+        y: 6940
         width: 1065
-        height: 867
+        height: 821
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,9 +221,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1693
-        y: 6933
+        y: 6940
         width: 1074
-        height: 829
+        height: 822
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,10 +264,10 @@ TextureImporter:
       name: Sprite Sheet Mask 3_3
       rect:
         serializedVersion: 2
-        x: 3105
-        y: 6924
+        x: 3107
+        y: 6940
         width: 1061
-        height: 834
+        height: 818
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,9 +309,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 5478
+        y: 5528
         width: 1077
-        height: 868
+        height: 818
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,9 +331,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1607
-        y: 5477
+        y: 5521
         width: 1064
-        height: 822
+        height: 780
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,9 +419,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 182
-        y: 4060
+        y: 4109
         width: 998
-        height: 805
+        height: 756
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,8 +484,8 @@ TextureImporter:
       name: Sprite Sheet Mask 3_13
       rect:
         serializedVersion: 2
-        x: 1646
-        y: 4098
+        x: 1649
+        y: 4103
         width: 1110
         height: 763
       alignment: 7
@@ -493,10 +506,10 @@ TextureImporter:
       name: Sprite Sheet Mask 3_14
       rect:
         serializedVersion: 2
-        x: 3232
-        y: 4057
+        x: 3229
+        y: 4099
         width: 1034
-        height: 804
+        height: 762
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,10 +528,10 @@ TextureImporter:
       name: Sprite Sheet Mask 3_15
       rect:
         serializedVersion: 2
-        x: 88
-        y: 2638
+        x: 78
+        y: 2686
         width: 1037
-        height: 805
+        height: 759
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,9 +573,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1460
-        y: 2641
+        y: 2688
         width: 1077
-        height: 989
+        height: 942
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,9 +617,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4267
-        y: 2641
+        y: 2679
         width: 1037
-        height: 805
+        height: 767
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,9 +683,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 190
-        y: 1183
+        y: 1265
         width: 1077
-        height: 909
+        height: 827
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -691,10 +704,10 @@ TextureImporter:
       name: Sprite Sheet Mask 3_23
       rect:
         serializedVersion: 2
-        x: 1766
-        y: 1225
+        x: 1768
+        y: 1270
         width: 1225
-        height: 868
+        height: 823
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
