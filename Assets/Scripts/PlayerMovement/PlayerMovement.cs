@@ -173,14 +173,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator ChangeMask(RuntimeAnimatorController mask)
     {
         anim.SetTrigger("changeMask");
-        string name_ = "";
-        if (mask == NoMask) name_ = "Normal";
-        else if (mask == FreezeMask) name_ = "Freeze";
-        else name_ = "Gravity";
-        anim.Play(name_);
         yield return new WaitForSeconds(0.3f);
-        anim.Play("Idle");
         anim.runtimeAnimatorController = mask;
+        anim.Play("This Mask");
     }
 
     void FixedUpdate()
