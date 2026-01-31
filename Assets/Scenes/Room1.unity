@@ -1402,46 +1402,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 712801306497947119, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 712801306497947119, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -186661657
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571559421806357825, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: NoMask
-      value: 
-      objectReference: {fileID: 9100000, guid: cb815797202df4042af5b328defc76e4, type: 2}
-    - target: {fileID: 1571559421806357825, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: FreezeMask
-      value: 
-      objectReference: {fileID: 22100000, guid: 8cf66028fc33948499c4d16071bf7d9a, type: 2}
-    - target: {fileID: 1571559421806357825, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: GravityMask
-      value: 
-      objectReference: {fileID: 22100000, guid: 5ae181822eb62ba498c99062b0a1db91, type: 2}
-    - target: {fileID: 1571559421806357825, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: hasFreezeMask
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571559421806357825, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: hasGravityMask
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6690121959365258337, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: c9fca0a9c8334b448876cfa554db1d10, type: 2}
     - target: {fileID: 7609975688420278351, guid: c7d531f48ca975546963c891fef379f8, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8511377474385493899, guid: c7d531f48ca975546963c891fef379f8, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: cb815797202df4042af5b328defc76e4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
