@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float waitToRotateSpeed0=0.2f;
     public float speed = 5.0f;
     public float jumpForce = 6.0f;
-    public float crouchScaleY = 0.5f;
+    public float crouchScaleY = 1f;
     private Vector3 originalScale;  
 
     [Header("Inventory")]
@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool gravityMaskActive = false;
     public GameObject freezeMask;
     private bool freezeMaskActive = false;
-    
+
+    public Animator anim;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public bool isGrounded;
@@ -29,12 +30,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        anim =  GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         if (gravityMask != null) gravityMask.SetActive(false);
         if (freezeMask != null) freezeMask.SetActive(false);
         originalScale = transform.localScale;
-        
+        anim.SetBool("nomask", true);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
@@ -44,16 +46,64 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && hasGravityMask)
         {
             gravityMaskActive = !gravityMaskActive;
-            if (gravityMaskActive) { freezeMaskActive = false; if (freezeMask != null) freezeMask.SetActive(false); ResetTime(); }
+            if (gravityMaskActive)
+            {
+                anim.SetBool("nomask", false);
+                anim.SetBool("gravityMask", true);
+                anim.SetBool("freezeMask", false);
+                
+                
+                freezeMaskActive = false;
+                if (freezeMask != null)
+                {
+                    freezeMask.SetActive(false); ResetTime();
+                }
+            }
+            else
+            {
+                anim.SetBool("nomask", true);
+                anim.SetBool("gravityMask", false);
+                anim.SetBool("freezeMask", false);
+            }
             // else if (isGravityFlipped) ToggleGravity();
-            if (gravityMask != null) gravityMask.SetActive(gravityMaskActive);
+            if (gravityMask != null)
+            {
+                gravityMask.SetActive(gravityMaskActive);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2) && hasFreezeMask)
         {
             freezeMaskActive = !freezeMaskActive;
-            if (freezeMaskActive) { gravityMaskActive = false; if (gravityMask != null) gravityMask.SetActive(false); if (isGravityFlipped) ToggleGravity(); }
-            else if (isTimeSlowed) ResetTime();
+            if (freezeMaskActive)
+            {
+                anim.SetBool("nomask", false);
+                anim.SetBool("gravityMask", false);
+                anim.SetBool("freezeMask", true);
+                gravityMaskActive = false;
+                if (gravityMask != null)
+                {
+                    gravityMask.SetActive(false);
+                }
+
+                if (isGravityFlipped)
+                {
+                    ToggleGravity();
+                }
+            }
+            else if (isTimeSlowed)
+            {
+                ResetTime();
+                anim.SetBool("nomask", true);
+                anim.SetBool("gravityMask", false);
+                anim.SetBool("freezeMask", false);
+            }
+            else
+            {
+                anim.SetBool("nomask", true);
+                anim.SetBool("gravityMask", false);
+                anim.SetBool("freezeMask", false);
+            }
             if (freezeMask != null) freezeMask.SetActive(freezeMaskActive);
         }
 
@@ -70,25 +120,44 @@ public class PlayerMovement : MonoBehaviour
 
         if (xInput > 0)
         {
+            anim.SetBool("walk", true);
             sr.flipX = isGravityFlipped;
         }
         
         else if (xInput < 0)
         {
+            anim.SetBool("walk", true);
             sr.flipX = !isGravityFlipped;
+        }
+
+        else
+        {
+            anim.SetBool("walk", false);
         }
 
         // --- JUMP & CROUCH ---
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
+            anim.SetTrigger("jump");
             float jumpDirection = isGravityFlipped ? -1f : 1f;
             rb.AddForce(Vector2.up * jumpForce * jumpDirection, ForceMode2D.Impulse);
+            
         }
-        
+
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded)
-            transform.localScale = new Vector3(originalScale.x, originalScale.y * crouchScaleY, originalScale.z);
-        else
-            transform.localScale = originalScale;
+        {
+            anim.SetBool("crouch", true);
+            //transform.localScale = new Vector3(originalScale.x, originalScale.y , originalScale.z);
+        }
+        //else
+        //{
+        //    //transform.localScale = originalScale;
+        //}
+        
+        if ((Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow) && isGrounded))
+        {
+            anim.SetBool("crouch", false);
+        }
     }
     
     void FixedUpdate()
@@ -131,7 +200,6 @@ public class PlayerMovement : MonoBehaviour
         var OwnCollision = GetComponent<Collider2D>();
         groundCheck.enabled = false;
         OwnCollision.enabled = false;
-        
         yield return new WaitForSeconds(waitToRotateSpeed0);
         OwnCollision.enabled = true;
         groundCheck.enabled = true;

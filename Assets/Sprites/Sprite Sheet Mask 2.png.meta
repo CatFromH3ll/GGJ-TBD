@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 800
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -154,6 +154,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -161,12 +174,12 @@ TextureImporter:
       name: Sprite Sheet Mask 2_0
       rect:
         serializedVersion: 2
-        x: 262
-        y: 6895
+        x: 263
+        y: 6944
         width: 1065
-        height: 867
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 850
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,11 +197,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1689
-        y: 6930
+        y: 6940
         width: 1074
-        height: 829
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 819
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,7 +223,7 @@ TextureImporter:
         width: 8
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,11 +241,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3103
-        y: 6926
+        y: 6940
         width: 1061
-        height: 834
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 823
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,11 +263,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 191
-        y: 5479
+        y: 5527
         width: 1077
-        height: 868
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 820
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -271,12 +284,12 @@ TextureImporter:
       name: Sprite Sheet Mask 2_5
       rect:
         serializedVersion: 2
-        x: 1606
-        y: 5476
+        x: 1608
+        y: 5524
         width: 1063
-        height: 822
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 779
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -298,7 +311,7 @@ TextureImporter:
         width: 490
         height: 566
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -320,7 +333,7 @@ TextureImporter:
         width: 303
         height: 401
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -338,11 +351,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 181
-        y: 4061
+        y: 4108
         width: 1000
-        height: 805
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 758
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -364,7 +377,7 @@ TextureImporter:
         width: 40
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -385,8 +398,8 @@ TextureImporter:
         y: 4100
         width: 1110
         height: 763
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -403,12 +416,12 @@ TextureImporter:
       name: Sprite Sheet Mask 2_11
       rect:
         serializedVersion: 2
-        x: 3232
-        y: 4058
+        x: 3230
+        y: 4103
         width: 1034
-        height: 804
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 759
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -429,8 +442,8 @@ TextureImporter:
         y: 2520
         width: 751
         height: 1088
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -451,8 +464,8 @@ TextureImporter:
         y: 2550
         width: 927
         height: 936
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -470,11 +483,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 190
-        y: 1183
+        y: 1266
         width: 1077
-        height: 909
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 826
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -492,11 +505,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1768
-        y: 1227
+        y: 1266
         width: 1225
-        height: 868
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 829
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -513,7 +526,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f8be8f3b9c0c9174dbdfe83f929898c6
     internalID: 0
     vertices: []
     indices: 
