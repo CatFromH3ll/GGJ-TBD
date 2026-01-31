@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float waitToRotateSpeed0=0.2f;
     public float speed = 5.0f;
     public float jumpForce = 6.0f;
-    public float crouchScaleY = 0.5f;
+    public float crouchScaleY = 1f;
     private Vector3 originalScale;  
 
     [Header("Inventory")]
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded)
-            transform.localScale = new Vector3(originalScale.x, originalScale.y * crouchScaleY, originalScale.z);
+            transform.localScale = new Vector3(originalScale.x, originalScale.y , originalScale.z);
         else
             transform.localScale = originalScale;
     }
