@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8126056559552394913}
   - component: {fileID: 3420934839954068755}
-  - component: {fileID: 8343616508183082148}
   - component: {fileID: 7177796383798326885}
+  - component: {fileID: 8292545552178789050}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Trap
@@ -78,19 +78,41 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7470816b04e138146a943fcc83b75982, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8343616508183082148
-PolygonCollider2D:
+--- !u!114 &7177796383798326885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8182992568856494971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e72e27bebbb91645b3adc5c3e194e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapType: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  isDangerousWhenFalling: 1
+  throwToLeft: 0
+  artFacesLeft: 0
+  rotationSpeed: 200
+  detectionDistance: 10
+  throwSpeed: 30
+--- !u!61 &8292545552178789050
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,37 +145,15 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5088339, y: -0.057904005}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    border: {x: 0.11363637, y: 0.16477273, z: 0.09090909, w: 0.14772728}
+    pivot: {x: 0, y: 0.5}
+    oldSize: {x: 0.9943182, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
---- !u!114 &7177796383798326885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8182992568856494971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e72e27bebbb91645b3adc5c3e194e2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trapType: 0
-  rotationSpeed: 200
-  detectionDistance: 10
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  m_Size: {x: 0.7491493, y: 0.5703311}
+  m_EdgeRadius: 0
