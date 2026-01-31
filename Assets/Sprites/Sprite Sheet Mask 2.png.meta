@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 95cb56d689eb2e34582d8993e160a349
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 669849396341088981
+    second: Sprite Sheet Mask 2_0
+  - first:
+      213: -5283471425239439640
+    second: Sprite Sheet Mask 2_1
+  - first:
+      213: 6260907709713847366
+    second: Sprite Sheet Mask 2_2
+  - first:
+      213: 1699650518895993285
+    second: Sprite Sheet Mask 2_3
+  - first:
+      213: -4217307627159752953
+    second: Sprite Sheet Mask 2_4
+  - first:
+      213: -826938465235179342
+    second: Sprite Sheet Mask 2_5
+  - first:
+      213: 7312782236114123116
+    second: Sprite Sheet Mask 2_6
+  - first:
+      213: -425941511617574168
+    second: Sprite Sheet Mask 2_7
+  - first:
+      213: 8412764564069158447
+    second: Sprite Sheet Mask 2_8
+  - first:
+      213: 499081152746453497
+    second: Sprite Sheet Mask 2_9
+  - first:
+      213: 4271416998100477372
+    second: Sprite Sheet Mask 2_10
+  - first:
+      213: -3764384033147721414
+    second: Sprite Sheet Mask 2_11
+  - first:
+      213: -8365126364774328142
+    second: Sprite Sheet Mask 2_12
+  - first:
+      213: 5037031373380714005
+    second: Sprite Sheet Mask 2_13
+  - first:
+      213: 8420917722767906159
+    second: Sprite Sheet Mask 2_14
+  - first:
+      213: -1589236245055856440
+    second: Sprite Sheet Mask 2_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_0
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 6895
+        width: 1065
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2abe91a78cb4900800000000000000
+      internalID: 669849396341088981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_1
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 6930
+        width: 1074
+        height: 829
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e62da55bb65da6b0800000000000000
+      internalID: -5283471425239439640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_2
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 7502
+        width: 8
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6449ff8e36633e650800000000000000
+      internalID: 6260907709713847366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_3
+      rect:
+        serializedVersion: 2
+        x: 3103
+        y: 6926
+        width: 1061
+        height: 834
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1aa1d442f569710800000000000000
+      internalID: 1699650518895993285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_4
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 5479
+        width: 1077
+        height: 868
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70fe89eae0d1975c0800000000000000
+      internalID: -4217307627159752953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_5
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 5476
+        width: 1063
+        height: 822
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b8ec80e8df1684f0800000000000000
+      internalID: -826938465235179342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_6
+      rect:
+        serializedVersion: 2
+        x: 3790
+        y: 5580
+        width: 490
+        height: 566
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c697e5fe2b83c7560800000000000000
+      internalID: 7312782236114123116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_7
+      rect:
+        serializedVersion: 2
+        x: 4985
+        y: 5680
+        width: 303
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea01f0b370c61af0800000000000000
+      internalID: -425941511617574168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_8
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 4061
+        width: 1000
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e065c5cc420c470800000000000000
+      internalID: 8412764564069158447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_9
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 4530
+        width: 40
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f97b870aa71de600800000000000000
+      internalID: 499081152746453497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_10
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 4100
+        width: 1110
+        height: 763
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5285bf02f174b30800000000000000
+      internalID: 4271416998100477372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_11
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 4058
+        width: 1034
+        height: 804
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a39e31a9aa832cbc0800000000000000
+      internalID: -3764384033147721414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_12
+      rect:
+        serializedVersion: 2
+        x: 3114
+        y: 2520
+        width: 751
+        height: 1088
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b81f5e34e919eb80800000000000000
+      internalID: -8365126364774328142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_13
+      rect:
+        serializedVersion: 2
+        x: 5801
+        y: 2550
+        width: 927
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51efad4c85127e540800000000000000
+      internalID: 5037031373380714005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_14
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1183
+        width: 1077
+        height: 909
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f655f5c8d0c1dd470800000000000000
+      internalID: 8420917722767906159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Mask 2_15
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 1227
+        width: 1225
+        height: 868
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c025452e06e1f9e0800000000000000
+      internalID: -1589236245055856440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sprite Sheet Mask 2_0: 669849396341088981
+      Sprite Sheet Mask 2_1: -5283471425239439640
+      Sprite Sheet Mask 2_10: 4271416998100477372
+      Sprite Sheet Mask 2_11: -3764384033147721414
+      Sprite Sheet Mask 2_12: -8365126364774328142
+      Sprite Sheet Mask 2_13: 5037031373380714005
+      Sprite Sheet Mask 2_14: 8420917722767906159
+      Sprite Sheet Mask 2_15: -1589236245055856440
+      Sprite Sheet Mask 2_2: 6260907709713847366
+      Sprite Sheet Mask 2_3: 1699650518895993285
+      Sprite Sheet Mask 2_4: -4217307627159752953
+      Sprite Sheet Mask 2_5: -826938465235179342
+      Sprite Sheet Mask 2_6: 7312782236114123116
+      Sprite Sheet Mask 2_7: -425941511617574168
+      Sprite Sheet Mask 2_8: 8412764564069158447
+      Sprite Sheet Mask 2_9: 499081152746453497
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
