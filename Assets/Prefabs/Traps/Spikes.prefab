@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -130,7 +130,7 @@ PolygonCollider2D:
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
@@ -152,8 +152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapType: 0
-  rotationSpeed: 200
-  detectionDistance: 10
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
+  isDangerousWhenFalling: 1
+  throwToLeft: 0
+  artFacesLeft: 0
+  rotationSpeed: 200
+  detectionDistance: 10
+  throwSpeed: 30
