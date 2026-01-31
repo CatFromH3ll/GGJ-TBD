@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground")) isGrounded = true;
@@ -137,6 +137,11 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+    */
+    public void SetGrounded(bool state)
+    {
+        isGrounded = state;
     }
     
 }
