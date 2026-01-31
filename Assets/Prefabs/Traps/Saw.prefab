@@ -152,8 +152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapType: 1
-  rotationSpeed: 200
-  detectionDistance: 10
   playerLayer:
     serializedVersion: 2
     m_Bits: 0
+  isDangerousWhenFalling: 1
+  throwToLeft: 0
+  artFacesLeft: 0
+  rotationSpeed: 200
+  detectionDistance: 10
+  throwSpeed: 30

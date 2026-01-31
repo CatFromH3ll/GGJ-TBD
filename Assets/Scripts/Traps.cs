@@ -72,7 +72,9 @@ public class Traps : MonoBehaviour
 
     void DetectPlayerInDirection(Vector2 direction)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionDistance, playerLayer);
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionDistance, playerLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position , direction, detectionDistance, playerLayer);
+        Debug.DrawRay(transform.position, direction * detectionDistance, Color.red);
         
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
