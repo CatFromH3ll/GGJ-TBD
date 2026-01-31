@@ -920,7 +920,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: gravityMask
     m_Type: 4
@@ -979,7 +979,7 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: walk
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -1893,15 +1893,15 @@ AnimatorStateMachine:
   m_EntryTransitions:
   - {fileID: -3651821588807506501}
   m_StateMachineTransitions:
-  - first: {fileID: -2211825156932983000}
-    second:
-    - {fileID: -1337849056818374246}
-  - first: {fileID: -8091789580528384564}
-    second:
-    - {fileID: 8460463403060203292}
   - first: {fileID: 3141582870911256126}
     second:
     - {fileID: -5269940589767565024}
+  - first: {fileID: -8091789580528384564}
+    second:
+    - {fileID: 8460463403060203292}
+  - first: {fileID: -2211825156932983000}
+    second:
+    - {fileID: -1337849056818374246}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -790, y: 520, z: 0}
   m_EntryPosition: {x: -560, y: 240, z: 0}
