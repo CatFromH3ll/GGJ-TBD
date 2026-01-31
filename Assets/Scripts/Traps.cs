@@ -174,6 +174,7 @@ public class Traps : MonoBehaviour
     }
     void RestartLevel()
     {
+        GlobalTimeFactor = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
