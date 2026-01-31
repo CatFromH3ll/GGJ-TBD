@@ -26,8 +26,6 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGravityFlipped => isGravityFlipped;
 
     private bool isTimeSlowed = false;
-    public LayerMask groundLayer; 
-    public float rayLength = 1.5f; 
 
     void Awake()
     {
@@ -47,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gravityMaskActive = !gravityMaskActive;
             if (gravityMaskActive) { freezeMaskActive = false; if (freezeMask != null) freezeMask.SetActive(false); ResetTime(); }
-            else if (isGravityFlipped) ToggleGravity();
+            // else if (isGravityFlipped) ToggleGravity();
             if (gravityMask != null) gravityMask.SetActive(gravityMaskActive);
         }
 
@@ -70,8 +68,15 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(xInput * speed, rb.linearVelocity.y);
 
-        if (xInput > 0) sr.flipX = false;
-        else if (xInput < 0) sr.flipX = true;
+        if (xInput > 0)
+        {
+            sr.flipX = isGravityFlipped;
+        }
+        
+        else if (xInput < 0)
+        {
+            sr.flipX = !isGravityFlipped;
+        }
 
         // --- JUMP & CROUCH ---
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
@@ -88,19 +93,8 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        Vector2 rayDir = isGravityFlipped ? transform.up : -transform.up;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, groundLayer);
-
-        /*if (isGrounded)
-        {
-            //float angle = Vector2.SignedAngle(isGravityFlipped ? Vector2.up : Vector2.down, hit.normal);
-            transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
-        else
-        {*/
-            float targetZ = isGravityFlipped ? 180f : 0f;
-            transform.rotation = Quaternion.Euler(targetZ, 0, 0);
-        
+        float targetZ = isGravityFlipped ? 180f : 0f;
+        transform.rotation = Quaternion.Euler(0, 0, targetZ);
     }
     
     void ToggleSlowMotion()
@@ -128,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
         //rb.AddForce((isGravityFlipped ? Vector2.up : Vector2.down) * 2f, ForceMode2D.Impulse);
 
         isGrounded = false;
-        sr.flipY = isGravityFlipped;
+        
     }
 
     private IEnumerator TurnOffGroundDetectionForFewFrames()
