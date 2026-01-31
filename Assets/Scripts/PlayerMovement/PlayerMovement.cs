@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -43,6 +44,15 @@ public class PlayerMovement : MonoBehaviour
         originalScale = transform.localScale;
         anim.SetBool("nomask", true);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    private void Start()
+    {
+        GameObject spaawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+        if (spaawnPoint != null)
+        {
+            transform.position = spaawnPoint.transform.position;
+        }
     }
 
     void Update()
