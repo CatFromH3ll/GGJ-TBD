@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2611363428257832117}
   - component: {fileID: 1255251175782640331}
   - component: {fileID: 5718236710451209458}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chandelier
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.6, y: 3.27}
+  m_DrawMode: 1
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -174,17 +174,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.008566141, y: -0.68350255}
+  m_Offset: {x: -0.016914368, y: -0.11579335}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.6, y: 3.27}
-    newSize: {x: 3.6, y: 3.27}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.602849, y: 1.9302657}
+  m_Size: {x: 1.0258923, y: 0.79484725}
   m_EdgeRadius: 0
 --- !u!95 &5718236710451209458
 Animator:
