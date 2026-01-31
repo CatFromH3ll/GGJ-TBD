@@ -235,12 +235,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 296
-        y: 784
-        width: 134
-        height: 132
+        y: 785
+        width: 133
+        height: 131
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 1, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -257,7 +257,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 505
-        y: 788
+        y: 786
         width: 132
         height: 130
       alignment: 1
@@ -279,9 +279,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 706
-        y: 784
+        y: 785
         width: 132
-        height: 131
+        height: 130
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
