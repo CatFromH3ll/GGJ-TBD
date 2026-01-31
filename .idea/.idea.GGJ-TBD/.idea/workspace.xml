@@ -6,48 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c51556be-4cab-449e-8051-a0fa119241c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ-TBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ-TBD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchFreeze.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchFreeze.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchWalk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchWalk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchWalkFreeze.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchWalkFreeze.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchWalkGravity.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CrouchWalkGravity.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/IdleFreeze.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/IdleFreeze.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/IdleGravity.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/IdleGravity.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/JumpFreeze.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/JumpFreeze.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player Animator Override Controller.overrideController" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player Animator Override Controller.overrideController.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/WalkFreeze.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/WalkFreeze.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/WalkGravity.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/WalkGravity.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/crouch.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/crouch.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/crouchGravity.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/crouchGravity.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/jump.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/jump.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/jumpGravity.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/jumpGravity.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/walk.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/walk.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/level_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/level_01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchFreeze.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchFreeze.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/Freeze.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/Freeze.overrideController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/NoMask/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/NoMask/Player.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

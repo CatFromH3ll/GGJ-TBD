@@ -9,15 +9,15 @@ AnimatorOverrideController:
   m_Name: Freeze
   m_Controller: {fileID: 9100000, guid: cb815797202df4042af5b328defc76e4, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 0cdd2c79cfe43b142ba45cae20f1baad, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: f10f9e131ea1dde428deedf56871da35, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 23fc2a799ebfe5f4596a27f0a718b397, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: c544e936e26c0624e82ef62b81fd5980, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: dbbfbdf5cb3df7b46874913d1a626281, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: c6eb375791ed93f4893b4f4b89563208, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: a18f9cc2bb509a04487d6578a1c5d3db, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 4fc85fc675462a349b48dc1ef14eef4e, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 441cb06f5dc0c2a4baf530d304ac6917, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 77925c95dcacd5d40b91db18071fa340, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6cd7345e49170664fa23731b78a12d15, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: e185679cfe8bd0d47b3e3c1dd2cb6c5f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f9f3b3368f914084288bd746c156385f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 23fc2a799ebfe5f4596a27f0a718b397, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d6668f9b64bfaee4fbab3ce7e7aab431, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dbbfbdf5cb3df7b46874913d1a626281, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8140813baac8f4c4390009496e1855ab, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0cdd2c79cfe43b142ba45cae20f1baad, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 89212951e2700574684073faebbaf0f6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a18f9cc2bb509a04487d6578a1c5d3db, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d18ddee22150ae14ba62db1abc1183e4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 441cb06f5dc0c2a4baf530d304ac6917, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3af391330f8315448ad31285b639c5dd, type: 2}
