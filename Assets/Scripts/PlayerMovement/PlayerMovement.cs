@@ -1,17 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private float waitToRotateSpeed0=0.2f;
     public float speed = 5.0f;
     public float jumpForce = 6.0f;
     public float crouchScaleY = 0.5f;
     private Vector3 originalScale;  
-    
-    [Header("Inventory (Auto-filled by Pickups)")]
+
+    [Header("Inventory")]
     public bool hasGravityMask = false;
     public bool hasFreezeMask = false;
 
-    [Header("Mask Visuals (Drag child objects here)")]
+    [Header("Mask Visuals")]
     public GameObject gravityMask;
     private bool gravityMaskActive = false;
     public GameObject freezeMask;
@@ -21,88 +23,79 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sr;
     public bool isGrounded;
     private bool isGravityFlipped = false;
+    public bool IsGravityFlipped => isGravityFlipped;
+
     private bool isTimeSlowed = false;
-    public LayerMask groundLayer; 
-    public float rayLength = 1.5f; // Used for slope rotation
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        // Ensure masks start hidden
         if (gravityMask != null) gravityMask.SetActive(false);
         if (freezeMask != null) freezeMask.SetActive(false);
-        // Record the starting size of the player
         originalScale = transform.localScale;
+        
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void Update()
     {
-        // 1. GRAVITY MASK TOGGLE (Requires Pickup)
+        // --- MASK TOGGLES ---
         if (Input.GetKeyDown(KeyCode.Alpha1) && hasGravityMask)
         {
             gravityMaskActive = !gravityMaskActive;
-            
-            if (gravityMaskActive)
-            {
-                freezeMaskActive = false;
-                if (freezeMask != null) freezeMask.SetActive(false);
-                ResetTime(); 
-            }
-            else if (isGravityFlipped) ToggleGravity();
-
+            if (gravityMaskActive) { freezeMaskActive = false; if (freezeMask != null) freezeMask.SetActive(false); ResetTime(); }
+            // else if (isGravityFlipped) ToggleGravity();
             if (gravityMask != null) gravityMask.SetActive(gravityMaskActive);
         }
 
-        // 2. FREEZE MASK TOGGLE (Requires Pickup)
         if (Input.GetKeyDown(KeyCode.Alpha2) && hasFreezeMask)
         {
             freezeMaskActive = !freezeMaskActive;
-
-            if (freezeMaskActive)
-            {
-                gravityMaskActive = false;
-                if (gravityMask != null) gravityMask.SetActive(false);
-                if (isGravityFlipped) ToggleGravity();
-            }
+            if (freezeMaskActive) { gravityMaskActive = false; if (gravityMask != null) gravityMask.SetActive(false); if (isGravityFlipped) ToggleGravity(); }
             else if (isTimeSlowed) ResetTime();
-
             if (freezeMask != null) freezeMask.SetActive(freezeMaskActive);
         }
 
         // --- ABILITIES ---
         if (gravityMaskActive && isGrounded && Input.GetKeyDown(KeyCode.Space))
-        {
             ToggleGravity();
-        }
 
         if (freezeMaskActive && Input.GetKeyDown(KeyCode.Space))
-        {
             ToggleSlowMotion();
-        }
 
         // --- MOVEMENT ---
         float xInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(xInput * speed, rb.linearVelocity.y);
 
+        if (xInput > 0)
+        {
+            sr.flipX = isGravityFlipped;
+        }
+        
+        else if (xInput < 0)
+        {
+            sr.flipX = !isGravityFlipped;
+        }
+
+        // --- JUMP & CROUCH ---
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             float jumpDirection = isGravityFlipped ? -1f : 1f;
             rb.AddForce(Vector2.up * jumpForce * jumpDirection, ForceMode2D.Impulse);
-            isGrounded = false;
         }
         
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded)
-        {
-            transform.localScale = new Vector3(originalScale.x, crouchScaleY, originalScale.z);
-        }
+            transform.localScale = new Vector3(originalScale.x, originalScale.y * crouchScaleY, originalScale.z);
         else
-        {
             transform.localScale = originalScale;
-        }
     }
     
-    
+    void FixedUpdate()
+    {
+        float targetZ = isGravityFlipped ? 180f : 0f;
+        transform.rotation = Quaternion.Euler(0, 0, targetZ);
+    }
     
     void ToggleSlowMotion()
     {
@@ -118,19 +111,30 @@ public class PlayerMovement : MonoBehaviour
     
     void ToggleGravity()
     {
+        StartCoroutine(TurnOffGroundDetectionForFewFrames());
         isGravityFlipped = !isGravityFlipped;
-        rb.gravityScale *= -1; 
-        transform.eulerAngles = new Vector3(0, 0, isGravityFlipped ? 180f : 0f);
+
+        // flip gravity
+        rb.gravityScale *= -1;
+
+        
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); // clear Y velocity
+        //rb.AddForce((isGravityFlipped ? Vector2.up : Vector2.down) * 2f, ForceMode2D.Impulse);
+
         isGrounded = false;
-        if (isGravityFlipped)
-        {
-            sr.flipX = true;
-            
-        }
-        else
-        {
-            sr.flipX = false;
-        }
+        
+    }
+
+    private IEnumerator TurnOffGroundDetectionForFewFrames()
+    {
+        var groundCheck = GetComponentInChildren< GroundColl > ();
+        var OwnCollision = GetComponent<Collider2D>();
+        groundCheck.enabled = false;
+        OwnCollision.enabled = false;
+        
+        yield return new WaitForSeconds(waitToRotateSpeed0);
+        OwnCollision.enabled = true;
+        groundCheck.enabled = true;
         
     }
 }
