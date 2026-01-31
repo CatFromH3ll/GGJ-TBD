@@ -19,9 +19,11 @@ public class PlayerMovement : MonoBehaviour
     
     private Rigidbody2D rb;
     private SpriteRenderer sr;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool isGravityFlipped = false;
     private bool isTimeSlowed = false;
+    public LayerMask groundLayer; 
+    public float rayLength = 1.5f; // Used for slope rotation
 
     void Awake()
     {
@@ -100,6 +102,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    
+    
     void ToggleSlowMotion()
     {
         isTimeSlowed = !isTimeSlowed;
@@ -129,14 +133,4 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground")) isGrounded = true;
-        else if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-    
 }

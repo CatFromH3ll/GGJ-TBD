@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1229343411
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 1, b: 0.15767026, a: 1}
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1229343411
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0.4437964, b: 1, a: 1}
@@ -364,8 +364,6 @@ GameObject:
   m_Component:
   - component: {fileID: 420446100007824291}
   - component: {fileID: 2286607530372376303}
-  - component: {fileID: 4154545968990192393}
-  - component: {fileID: 2995471916091620784}
   - component: {fileID: 1571559421806357825}
   m_Layer: 0
   m_Name: Player
@@ -447,109 +445,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4154545968990192393
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7609975688420278351}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: c9fca0a9c8334b448876cfa554db1d10, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!60 &2995471916091620784
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7609975688420278351}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3313411, y: 1.08375}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.33712196, y: -0.2680883}
-      - {x: 0.39951944, y: -0.11449456}
-      - {x: 0.52431434, y: -0.008898856}
-      - {x: 0.5915116, y: 0.043898996}
-      - {x: 0.6203104, y: 0.048698798}
-      - {x: 0.6587089, y: 0.096696846}
-      - {x: 0.6587089, y: 0.1494947}
-      - {x: 0.62991005, y: 0.16869392}
-      - {x: 0.6491093, y: 0.19269294}
-      - {x: 0.6587089, y: 0.21669196}
-      - {x: 0.6587089, y: 0.24069099}
-      - {x: 0.63470984, y: 0.31748787}
-      - {x: 0.60111123, y: 0.37988532}
-      - {x: 0.50991493, y: 0.47588143}
-      - {x: 0.4523173, y: 0.51427984}
-      - {x: 0.38991982, y: 0.54307866}
-      - {x: 0.34192178, y: 0.5478785}
-      - {x: 0.21232705, y: 0.5478785}
-      - {x: 0.1499296, y: 0.52867925}
-      - {x: 0.039534084, y: 0.461482}
-      - {x: -0.042062595, y: 0.3750855}
-      - {x: -0.10446005, y: 0.26948982}
-      - {x: -0.13805869, y: 0.16869392}
-      - {x: -0.01791048, y: 0.035793066}
-      - {x: -0.13822794, y: -0.12117267}
-      - {x: -0.16557264, y: -0.48363423}
-      - {x: 0.36315918, y: -0.48547578}
-      - {x: 0.3282857, y: -0.38958836}
-      - {x: 0.30890617, y: -0.3499765}
-  m_UseDelaunayMesh: 0
 --- !u!114 &1571559421806357825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,3 +464,4 @@ MonoBehaviour:
   hasFreezeMask: 0
   gravityMask: {fileID: 0}
   freezeMask: {fileID: 0}
+  isGrounded: 0
