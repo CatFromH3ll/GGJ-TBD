@@ -1,13 +1,15 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private float waitToRotateSpeed0=0.2f;
     public float speed = 5.0f;
     public float jumpForce = 6.0f;
     public float crouchScaleY = 0.5f;
     private Vector3 originalScale;  
-    
-    [Header("Inventory (Auto-filled by Pickups)")]
+
+    [Header("Inventory")]
     public bool hasGravityMask = false;
     public bool hasFreezeMask = false;
 
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sr;
     public bool isGrounded;
     private bool isGravityFlipped = false;
+    public bool IsGravityFlipped => isGravityFlipped;
+
     private bool isTimeSlowed = false;
     public LayerMask groundLayer; 
     public float rayLength = 1.5f; 
@@ -33,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         if (freezeMask != null) freezeMask.SetActive(false);
         originalScale = transform.localScale;
         
-        // This is important: stop physics from spinning the player
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
@@ -57,12 +60,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // --- ABILITIES ---
-        if (gravityMaskActive && isGrounded && Input.GetKeyDown(KeyCode.Space)) ToggleGravity();
-        if (freezeMaskActive && Input.GetKeyDown(KeyCode.Space)) ToggleSlowMotion();
+        if (gravityMaskActive && isGrounded && Input.GetKeyDown(KeyCode.Space))
+            ToggleGravity();
+
+        if (freezeMaskActive && Input.GetKeyDown(KeyCode.Space))
+            ToggleSlowMotion();
 
         // --- MOVEMENT ---
         float xInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(xInput * speed, rb.linearVelocity.y);
+
+        if (xInput > 0) sr.flipX = false;
+        else if (xInput < 0) sr.flipX = true;
 
         // --- JUMP & CROUCH ---
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
@@ -72,39 +81,66 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded)
-            transform.localScale = new Vector3(originalScale.x, crouchScaleY, originalScale.z);
+            transform.localScale = new Vector3(originalScale.x, originalScale.y * crouchScaleY, originalScale.z);
         else
             transform.localScale = originalScale;
     }
     
     void FixedUpdate()
     {
-        // This ray points DOWN when normal, and UP when gravity is flipped
         Vector2 rayDir = isGravityFlipped ? transform.up : -transform.up;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, rayLength, groundLayer);
 
-        // ONLY align to slope if we are actually grounded
-        if (hit.collider != null && isGrounded)
+        /*if (isGrounded)
         {
-            float angle = Vector2.SignedAngle(isGravityFlipped ? Vector2.down : Vector2.up, hit.normal);
+            //float angle = Vector2.SignedAngle(isGravityFlipped ? Vector2.up : Vector2.down, hit.normal);
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
         else
-        {
-            // If in air, just stay upright (0) or upside down (180)
+        {*/
             float targetZ = isGravityFlipped ? 180f : 0f;
-            transform.rotation = Quaternion.Euler(0, 0, targetZ);
-        }
+            transform.rotation = Quaternion.Euler(targetZ, 0, 0);
+        
     }
     
-    void ToggleSlowMotion() { isTimeSlowed = !isTimeSlowed; Traps.GlobalTimeFactor = isTimeSlowed ? 0.5f : 1.0f; }
-    void ResetTime() { isTimeSlowed = false; Traps.GlobalTimeFactor = 1.0f; }
+    void ToggleSlowMotion()
+    {
+        isTimeSlowed = !isTimeSlowed;
+        Traps.GlobalTimeFactor = isTimeSlowed ? 0.5f : 1.0f;
+    }
+
+    void ResetTime()
+    {
+        isTimeSlowed = false;
+        Traps.GlobalTimeFactor = 1.0f;
+    }
     
     void ToggleGravity()
     {
+        StartCoroutine(TurnOffGroundDetectionForFewFrames());
         isGravityFlipped = !isGravityFlipped;
-        rb.gravityScale *= -1; 
+
+        // flip gravity
+        rb.gravityScale *= -1;
+
+        
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); // clear Y velocity
+        //rb.AddForce((isGravityFlipped ? Vector2.up : Vector2.down) * 2f, ForceMode2D.Impulse);
+
         isGrounded = false;
         sr.flipY = isGravityFlipped;
+    }
+
+    private IEnumerator TurnOffGroundDetectionForFewFrames()
+    {
+        var groundCheck = GetComponentInChildren< GroundColl > ();
+        var OwnCollision = GetComponent<Collider2D>();
+        groundCheck.enabled = false;
+        OwnCollision.enabled = false;
+        
+        yield return new WaitForSeconds(waitToRotateSpeed0);
+        OwnCollision.enabled = true;
+        groundCheck.enabled = true;
+        
     }
 }

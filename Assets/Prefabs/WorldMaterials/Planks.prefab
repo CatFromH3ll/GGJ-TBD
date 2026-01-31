@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5081628616237295955}
   - component: {fileID: 2890354593996112890}
   - component: {fileID: 7562526792145387632}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Planks
   m_TagString: Ground
   m_Icon: {fileID: 0}
