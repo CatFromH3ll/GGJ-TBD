@@ -759,11 +759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 420446100007824291, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.71
+      value: -5.9
       objectReference: {fileID: 0}
     - target: {fileID: 420446100007824291, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.61
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 420446100007824291, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -821,6 +821,14 @@ PrefabInstance:
       propertyPath: hasGravityMask
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2995471916091620784, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[25].x
+      value: -0.1320405
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995471916091620784, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[25].y
+      value: -0.48736
+      objectReference: {fileID: 0}
     - target: {fileID: 3699863154769961917, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -837,6 +845,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5896439108401983472, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c9fca0a9c8334b448876cfa554db1d10, type: 2}
     - target: {fileID: 7574434919079770345, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -849,10 +861,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2995471916091620784, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7609975688420278351, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1540348008}
   m_SourcePrefab: {fileID: 100100000, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
 --- !u!1001 &220223505
 PrefabInstance:
@@ -1274,9 +1290,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 115.9801
+      objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.x
-      value: 115.98008
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1321,6 +1341,14 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 115.9801
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 115.9801
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2977,6 +3005,7 @@ Transform:
   - {fileID: 1439952040}
   - {fileID: 1895995301}
   - {fileID: 488489962}
+  - {fileID: 2144386677}
   - {fileID: 1873693994}
   - {fileID: 1130150029}
   - {fileID: 553178787}
@@ -3372,9 +3401,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 69.1608
+      objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.x
-      value: 69.1608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3419,6 +3452,14 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 69.1608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 69.1608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5063,9 +5104,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 55.16961
+      objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.x
-      value: 55.169613
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5110,6 +5155,14 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 55.16961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 55.16961
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5181,13 +5234,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
-    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
-      propertyPath: m_LocalScale.x
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
       value: 3.5694
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4627
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5233,6 +5290,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.5694
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5246,13 +5311,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
-    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
-      propertyPath: m_LocalScale.x
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
       value: 3.5694
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4627
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5297,6 +5366,14 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.5694
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5450,13 +5527,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
-    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
-      propertyPath: m_LocalScale.x
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
       value: 3.5694
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4627
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5501,6 +5582,14 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.5694
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5748,9 +5837,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: -7.79064
+      objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.x
-      value: -7.79064
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5795,6 +5888,18 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 7.79362
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.009840369
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: -7.79064
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6315,13 +6420,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
-    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
-      propertyPath: m_LocalScale.x
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
       value: 3.5694
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4627
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6366,6 +6475,14 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.5694
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6444,6 +6561,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8126056559552394913, guid: a85f261f80734e84db671b45aaf2eece, type: 3}
   m_PrefabInstance: {fileID: 370707737}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1540348002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7609975688420278351, guid: f21d81584283b4d4e95bf576580c0cee, type: 3}
+  m_PrefabInstance: {fileID: 218768020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1540348008
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540348002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.27210522, y: 0.04001534}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3313411, y: 1.08375}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.74871635, y: 1.0037193}
+  m_EdgeRadius: 0
 --- !u!1001 &1547335740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6522,19 +6690,51 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 707122498}
     m_Modifications:
+    - target: {fileID: 4701134393884794109, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_Size.x
+      value: 8.130917
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701134393884794109, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081628616237295955, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_Size.x
+      value: 8.130917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081628616237295955, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081628616237295955, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4492754
+      objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.74356
+      value: 105.24
       objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -85.884056
       objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6542,15 +6742,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7109,13 +7309,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
-    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
-      propertyPath: m_LocalScale.x
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
       value: 3.5694
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4627
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7160,6 +7364,14 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.5694
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8813,13 +9025,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 707122498}
     m_Modifications:
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 10.12134
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.y
+      value: 1.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186104667349304734, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3282777923432776360, guid: ba833a76af4093e46bb0e2010c0b0df2, type: 3}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10.121341
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.87
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8827,7 +9051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.29
+      value: -2.87
       objectReference: {fileID: 0}
     - target: {fileID: 1882594338119095007, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8864,6 +9088,22 @@ PrefabInstance:
     - target: {fileID: 2727440770412129090, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.x
+      value: 10.12134
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_Size.y
+      value: 1.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 10.12134
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322792352236179447, guid: e4317f07cd006634fbd83fc3dc67b931, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.83
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9054,6 +9294,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a85f261f80734e84db671b45aaf2eece, type: 3}
+--- !u!4 &2144386677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6875206866527823713, guid: b38282590b00766458dc578ad6bad96f, type: 3}
+  m_PrefabInstance: {fileID: 1562956533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9061,4 +9306,3 @@ SceneRoots:
   - {fileID: 707122498}
   - {fileID: 218768020}
   - {fileID: 63252723}
-  - {fileID: 1562956533}
