@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c51556be-4cab-449e-8051-a0fa119241c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ-TBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ-TBD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchFreeze.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchFreeze.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/CrouchWalkFreeze.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/Freeze.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/Freeze.overrideController" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/IdleFreeze.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/JumpFreeze.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Freeze/WalkFreeze.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/NoMask/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/NoMask/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Room1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Room1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/level_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/level_01.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +26,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MaskPickup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/levelTransition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@775481462b6d/Shaders/2D/Light2D.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -55,7 +46,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "with-sound",
+    "git-widget-placeholder": "GameUpdatedComplit",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,7 +58,7 @@
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/OneDrive/Desktop/Game Builds\GGJ-TBD.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/OneDrive/Desktop/Game Builds/GGJ trapadour/version beta 2.0\GGJ-TBD.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\ariel\OneDrive\Desktop\Game Builds" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -125,6 +116,9 @@
       <workItem from="1769777511776" duration="5963000" />
       <workItem from="1769806065952" duration="1435000" />
       <workItem from="1769861165481" duration="1058000" />
+      <workItem from="1769876069082" duration="1273000" />
+      <workItem from="1769955183707" duration="562000" />
+      <workItem from="1769974411528" duration="1678000" />
     </task>
     <servers />
   </component>

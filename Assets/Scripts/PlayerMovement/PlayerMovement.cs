@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float waitToRotateSpeed0 = 0.2f;
+    [SerializeField] private float waitToRotateSpeed0 = 0.13f;
     public float speed = 5.0f;
     public float jumpForce = 6.0f;
     public float crouchScaleY = 1f;
